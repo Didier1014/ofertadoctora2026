@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react"
 import { Button } from "../components/ui/button"
-import { TestimonialCarousel } from "../components/TestimonialCarousel"
-import { WistiaVideoPlayer } from "../components/WistiaVideoPlayer"
+import { CountdownBanner } from "../components/CountdownBanner"
+import { VslVideoPlayer } from "../components/VslVideoPlayer"
+import { ViewerCounter } from "../components/ViewerCounter"
+import { FakeComments } from "../components/FakeComments"
 
 export function HomePage() {
   const [showButton, setShowButton] = useState(false)
-  const checkoutUrl = "https://grokgg.space/homempotente1"
+  const checkoutUrl = "https://grokgg.space/forcarenovada"
 
   useEffect(() => {
     const timer = setTimeout(() => setShowButton(true), 9 * 60 * 1000)
@@ -13,53 +15,104 @@ export function HomePage() {
   }, [])
 
   return (
-    <main className="min-h-screen bg-background">
-      <div className="max-w-2xl mx-auto px-4 py-8">
-        <div className="text-center mb-6">
-          <h1 className="text-2xl md:text-3xl font-bold leading-tight mb-2">
-            <span className="text-foreground">O </span>
-            <span className="bg-accent text-accent-foreground px-1">SEGREDO</span>
-            <span className="text-foreground"> DO ENERGIZANTE </span>
-            <span className="bg-accent text-accent-foreground px-1">AFRICANO</span>
-            <span className="text-foreground">:</span>
+    <div style={{ background: "#111", minHeight: "100vh" }}>
+      <CountdownBanner />
+
+      <main style={{ maxWidth: 720, margin: "0 auto", padding: "16px" }}>
+        <div style={{ textAlign: "center", marginBottom: 16 }}>
+          <h1 style={{
+            fontSize: "clamp(1.25rem, 4vw, 1.75rem)",
+            fontWeight: 800,
+            lineHeight: 1.2,
+            color: "#fff",
+            margin: "0 0 8px",
+          }}>
+            <span style={{ color: "#ffd700" }}>O SEGREDO DO ENERGIZANTE AFRICANO:</span>
           </h1>
-          <h2 className="text-xl md:text-2xl font-bold leading-tight">
-            <span className="bg-accent text-accent-foreground px-1">REVELADO</span>
-            <span className="text-foreground">: O </span>
-            <span className="bg-accent text-accent-foreground px-1">ENERGIZANTE</span>
-            <span className="text-foreground"> DE 7 DIAS QUE </span>
-            <span className="underline font-bold">ESTICA E ENGROSSA</span>
-            <span className="text-foreground"> O PAU EM ATÉ </span>
-            <span className="bg-accent text-accent-foreground px-1">20CM</span>
+          <h2 style={{
+            fontSize: "clamp(1.1rem, 3.5vw, 1.5rem)",
+            fontWeight: 800,
+            lineHeight: 1.2,
+            color: "#fff",
+            margin: 0,
+          }}>
+            <span style={{ background: "#ffd700", color: "#000", padding: "0 4px" }}>REVELADO</span>
+            <span> </span>
+            <span style={{ color: "#ffd700" }}>O ENERGIZANTE DE 7 DIAS</span>
+            <br />
+            <span>Que </span>
+            <span style={{ textDecoration: "underline", fontWeight: 900 }}>ESTICA E ENGROSSA</span>
+            <span> O Pau em Até </span>
+            <span style={{ background: "#ffd700", color: "#000", padding: "0 4px" }}>20CM</span>
           </h2>
         </div>
 
-        <div className="bg-secondary text-secondary-foreground p-4 rounded-lg mb-4 text-center text-base md:text-lg">
-          <span className="text-accent font-bold">Incrível!</span> Revelado: Os Ingredientes
+        <div style={{
+          background: "#222",
+          color: "#fff",
+          padding: 12,
+          borderRadius: 8,
+          textAlign: "center",
+          fontSize: "clamp(0.9rem, 2.5vw, 1.1rem)",
+          marginBottom: 16,
+        }}>
+          <span style={{ color: "#ffd700", fontWeight: 700 }}>Incrível!</span> Revelado: Os Ingredientes
           Usado Para Aumentar em Pelo Menos <strong>15cm</strong> o Tamanho do Pênis
         </div>
 
-        <p className="text-center text-foreground text-sm mb-6">
+        <p style={{
+          textAlign: "center",
+          color: "#ccc",
+          fontSize: 14,
+          marginBottom: 20,
+        }}>
           Aperte o botão play e aumente volume assista até o fim.
         </p>
 
-        <WistiaVideoPlayer />
+        <VslVideoPlayer />
+        <ViewerCounter />
+        <FakeComments />
 
         {showButton && (
           <a
             href={checkoutUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="block mb-4"
+            style={{ display: "block", marginTop: 20, textDecoration: "none" }}
           >
-            <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg py-6 rounded-lg cursor-pointer">
+            <Button
+              className="w-full cursor-pointer"
+              style={{
+                width: "100%",
+                fontSize: "1.125rem",
+                fontWeight: 700,
+                padding: "16px 0",
+                borderRadius: 8,
+                background: "hsl(25 95% 53%)",
+                color: "#fff",
+                border: "none",
+              }}
+            >
               Quero o meu energizante
             </Button>
           </a>
         )}
 
-        <TestimonialCarousel />
-      </div>
-    </main>
+        <div style={{
+          textAlign: "center",
+          padding: "18px 16px",
+          color: "#aaa",
+          fontSize: 13,
+          marginTop: 10,
+        }}>
+          <a href="#" style={{ color: "#ccc", textDecoration: "none", fontWeight: 600 }}>Política de Privacidade</a>
+          <span> | </span>
+          <a href="#" style={{ color: "#ccc", textDecoration: "none", fontWeight: 600 }}>Termos</a>
+          <p style={{ margin: "6px 0 0", fontSize: 12 }}>
+            © Instituto de Disfunção Erétil 2026. Todos os direitos reservados.
+          </p>
+        </div>
+      </main>
+    </div>
   )
 }
