@@ -5,18 +5,18 @@ export function VslVideoPlayer() {
 
   useEffect(() => {
     const exists = document.querySelector(
-      'script[src*="converteai.net/1c049ea8-b7d4-4846-a066-e842abb5715b"]'
+      'script[src*="converteai.net/e984ae4f-723b-4a7e-8098-ad701a5746ff"]'
     )
     if (!exists) {
       const s = document.createElement("script")
-      s.src = "https://scripts.converteai.net/1c049ea8-b7d4-4846-a066-e842abb5715b/players/6a1b3b33e6e441f74424f3aa/v4/player.js"
+      s.src = "https://scripts.converteai.net/e984ae4f-723b-4a7e-8098-ad701a5746ff/players/6aeb515f9cb55ca4cc976f05/v4/player.js"
       s.async = true
       document.head.appendChild(s)
     }
 
     if (containerRef.current && !containerRef.current.querySelector("vturb-smartplayer")) {
       const el = document.createElement("vturb-smartplayer")
-      el.id = "vid-6a1b3b33e6e441f74424f3aa"
+      el.id = "vid-6aeb515f9cb55ca4cc976f05"
       el.style.display = "block"
       el.style.margin = "0 auto"
       el.style.width = "100%"
