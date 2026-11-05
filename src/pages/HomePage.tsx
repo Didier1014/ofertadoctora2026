@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 import { Button } from "../components/ui/button"
-import { CountdownBanner } from "../components/CountdownBanner"
 import { VslVideoPlayer } from "../components/VslVideoPlayer"
 import { ViewerCounter } from "../components/ViewerCounter"
 import { FakeComments } from "../components/FakeComments"
@@ -16,8 +15,6 @@ export function HomePage() {
 
   return (
     <div style={{ background: "#111", minHeight: "100vh" }}>
-      <CountdownBanner />
-
       <main style={{ maxWidth: 720, margin: "0 auto", padding: "16px" }}>
         <div style={{ textAlign: "center", marginBottom: 16 }}>
           <h1 style={{
@@ -45,19 +42,6 @@ export function HomePage() {
             <span> O Pau em Até </span>
             <span style={{ background: "#ffd700", color: "#000", padding: "0 4px" }}>20CM</span>
           </h2>
-        </div>
-
-        <div style={{
-          background: "#222",
-          color: "#fff",
-          padding: 12,
-          borderRadius: 8,
-          textAlign: "center",
-          fontSize: "clamp(0.9rem, 2.5vw, 1.1rem)",
-          marginBottom: 16,
-        }}>
-          <span style={{ color: "#ffd700", fontWeight: 700 }}>Incrível!</span> Revelado: Os Ingredientes
-          Usado Para Aumentar em Pelo Menos <strong>15cm</strong> o Tamanho do Pênis
         </div>
 
         <p style={{
