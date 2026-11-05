@@ -7,7 +7,7 @@ import { FakeComments } from "../components/FakeComments"
 
 export function HomePage() {
   const [showButton, setShowButton] = useState(false)
-  const checkoutUrl = "https://grokgg.space/forcarenovada"
+  const checkoutUrl = "https://www.redoxpay.site/c/sal"
 
   useEffect(() => {
     const timer = setTimeout(() => setShowButton(true), 9 * 60 * 1000)
