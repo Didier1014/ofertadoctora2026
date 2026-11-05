@@ -20,12 +20,12 @@ export function VslVideoPlayer() {
       el.style.display = "block"
       el.style.margin = "0 auto"
       el.style.width = "100%"
-      el.style.maxWidth = "400px"
+      el.style.maxWidth = "320px"
       containerRef.current.appendChild(el)
     }
   }, [])
 
   return (
-    <div style={{ margin: "0 auto", width: "100%", maxWidth: 400 }} ref={containerRef} />
+    <div style={{ margin: "0 auto", width: "100%", maxWidth: 320 }} ref={containerRef} />
   )
 }
